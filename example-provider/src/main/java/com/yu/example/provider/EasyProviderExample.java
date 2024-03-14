@@ -10,6 +10,7 @@ import com.yu.rpc.registry.Registry;
 import com.yu.rpc.registry.RegistryFactory;
 import com.yu.rpc.server.HttpServer;
 import com.yu.rpc.server.VertxHttpServer;
+import com.yu.rpc.server.tcp.VertxTcpServer;
 
 /**
  * 服务提供者示例
@@ -38,8 +39,12 @@ public class EasyProviderExample {
             throw new RuntimeException(e);
         }
 
-        // 提供服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+//        // 提供服务
+//        HttpServer httpServer = new VertxHttpServer();
+//        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }
