@@ -1,0 +1,4 @@
+no=com.yu.rpc.fault.retry.NoRetryStrategy
+fixedInterval=com.yu.rpc.fault.retry.FixedIntervalRetryStrategy
+randomDelay=com.yu.rpc.fault.retry.RandomDelayRetryStrategy
+exponentialBackoff=com.yu.rpc.fault.retry.ExponentialBackoffRetryStrategy
